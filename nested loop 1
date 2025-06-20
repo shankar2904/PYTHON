@@ -1,0 +1,30 @@
+lines=int(input("enter the number of lines"))
+stars=int(input("enter the number of stars"))
+c=0
+print("-----------------")
+for i in range(lines):
+    for j in range(stars):
+       print("*",end="  ")
+       c=c+1
+    print()
+print(c)
+print("-----------------")
+print("-----------------")
+d=0
+for i in range(lines -1):
+    for j in range(stars):
+       print("*",end="  ")
+       d=d+1
+    print()
+print(d)
+e=0
+print()
+print("-----------------")
+print("-----------------")
+for i in range(lines-2):
+    for j in range(stars):
+       print("*",end="  ")
+       e=e+1
+    print()
+print(e)
+print("-----------------")
