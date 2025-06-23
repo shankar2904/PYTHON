@@ -1,0 +1,63 @@
+import random
+import time 
+
+# Input player names
+name1 = input("Enter Player 1 name: ")
+name2 = input("Enter Player 2 name: ")
+
+# Computer randomly selects 5 unique numbers
+nums = []
+while len(nums) < 5:
+    d = random.randint(1, 10)
+    if d not in nums:
+        nums.append(d)
+
+print("_________________")
+print("Computer has taken 5 numbers.")
+print("Ready to play!")
+print("_________________")
+
+player1 = []
+player2 = []
+s1 = 0
+s2 = 0
+
+# 3 turns for each player
+for i in range(3):
+    print("Turn {}".format(i+1))
+    
+    # Player 1 input
+    a = int(input(f"{name1}, enter your number: "))
+    player1.append(a)
+    if a in nums:
+        print("Correct!")
+        s1 += 1
+    else:
+        print("Wrong!")
+    
+    # Player 2 input
+    b = int(input(f"{name2}, enter your number: "))
+    player2.append(b)
+    if b in nums:
+        print("Correct!")
+        s2 += 1
+    else:
+        print("Wrong!")
+
+
+time.sleep(2)
+print("_________________")
+print("Game Over!")
+print(f"{name1} score: {s1}")
+print(f"{name2} score: {s2}")
+
+
+print("Computer's numbers were:",nums)
+
+
+if s1 > s2:
+    print(f"{name1} wins!")
+elif s2 > s1:
+    print(f"{name2} wins!")
+else:
+    print("It's a tie!")
