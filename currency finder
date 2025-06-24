@@ -1,0 +1,7 @@
+a=int(input("enter amount in rupees"))
+l=[500,200,100,50,20,10,5,2,1]
+for amount  in l:
+    if a>amount:
+        count=a//amount
+        a=a%amount
+        print(f"{amount} rupee:{count} notes/coins")
