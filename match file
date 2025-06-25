@@ -1,0 +1,11 @@
+a=11
+
+match a:
+    case 1:
+        print("good")
+    case 2:
+        print("bad")
+    case 10:
+        print("super")
+    case _:
+        print("wrong")
