@@ -1,0 +1,39 @@
+import random
+
+snake={16:6,48:30,66:23,89:78,99:2}
+ladder={4:19,22:50,33:60,44:80,55:91}
+player_pos=[0,0]
+def roll_dice():
+    return random.randint(1,6)
+
+
+def move(player, value):
+    initial = player_pos[player]
+    player_pos[player] += value
+    if player_pos[player] > 100:
+        player_pos[player] = initial  
+    
+    if player_pos[player] in snake:
+        print(f"Player {player+1} got bitten by a snake at {player_pos[player]}!")
+        player_pos[player] = snakes[player_pos[player]]
+   
+    elif player_pos[player] in ladder:
+        print(f"Player {player+1} climbed a ladder at {player_pos[player]}!")
+        player_pos[player] = ladder[player_pos[player]]
+   
+    print(f"Player {player+1} is now at position {player_pos[player]}")
+def check_winner(player):
+    return player_pos[player] == 100
+print(" Welcome to Snake and Ladder \n")
+
+turn = 0
+while True:
+    input(f"Player {turn+1}, press Enter to roll the dice...")
+    dice = roll_dice()
+    print(f"Player {turn+1} rolled a {dice}")
+    move(turn, dice)
+    if check_winner(turn):
+        print(f" Player {turn+1} wins! Congratulations!")
+        break
+    if dice != 6:
+        turn = 1 - turn
