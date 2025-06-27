@@ -1,4 +1,4 @@
-mport difflib
+import difflib
 
 
 known_names = [
