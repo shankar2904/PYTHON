@@ -1,0 +1,12 @@
+head=int(input("enter head: "))
+legs=int(input("enter legs: "))
+flag=False
+for i in range(head):
+    j=head-i
+    if(j*2+i*4==legs):
+        flag=True
+        break
+if(flag):
+    print(i,j)
+else:
+    print('No solution')
